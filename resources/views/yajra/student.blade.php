@@ -11,7 +11,7 @@
     
 <div class="container mt-5">
     <h2 class="mb-4">Laravel 7 Yajra Datatables Example</h2>
-    <table class="table table-bordered yajra-datatable">
+    <table class="table table-bordered yajra-datatable w-100">
         <thead>
             <tr>
                 <th>No</th>
@@ -50,12 +50,8 @@
             {data: 'username', name: 'username'},
             {data: 'phone', name: 'phone'},
             {data: 'dob', name: 'dob'},
-            {
-                data: 'action', 
-                name: 'action', 
-                orderable: true, 
-                searchable: true
-            },
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+            
         ]
     });
     
@@ -63,6 +59,6 @@
 
   //edit
 
-  
+
 </script>
 </html>
