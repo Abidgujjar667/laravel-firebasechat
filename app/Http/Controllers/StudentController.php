@@ -29,6 +29,8 @@ class StudentController extends Controller
 				    'align' => 'center'
 				])
 
+
+
                 ->rawColumns(['action'])
                 ->make(true);
         }
