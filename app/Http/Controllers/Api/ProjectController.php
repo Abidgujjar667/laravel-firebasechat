@@ -53,8 +53,12 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show($id)
     {
+        $project=Project::find($id);
+        if (!$project){
+            return response(['error'=>'Data not found'],404);
+        }
         return response(['project' => new ProjectResource($project), 'message' => 'Retrieved successfully'], 200);
     }
 
