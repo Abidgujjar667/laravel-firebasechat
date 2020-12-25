@@ -25,3 +25,5 @@ Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
 
 Route::apiResource('projects', ProjectController::class)->middleware('auth:api');
+
+Route::apiResource('products', \App\Http\Controllers\Api\ProductController::class)->middleware('auth:api');
