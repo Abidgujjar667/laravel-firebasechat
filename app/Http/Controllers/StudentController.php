@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use DataTables;
+use App\DataTables\StudentsDataTable;
+use App\DataTables\StudentsDataTableEditor;
 
 class StudentController extends Controller
 {
-    public function index(Request $request)
+    /*public function index(Request $request)
     {
         if ($request->ajax()) {
             $user = Student::latest()->get();
@@ -36,5 +38,13 @@ class StudentController extends Controller
         }
       
         return view('yajra.student');
+    }*/
+
+    public function index(StudentsDataTable $dataTable){
+        return $dataTable->render('yajra.student');
+    }
+
+    public function store(StudentsDataTableEditor $editor){
+        return $editor->process(\request());
     }
 }

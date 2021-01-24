@@ -19,6 +19,8 @@
         "laravel/ui": "^3.0",
         "nesbot/carbon": "^2.41",
         "pusher/pusher-php-server": "^4.1",
+        "yajra/laravel-datatables": "1.5",
+        "yajra/laravel-datatables-editor": "^1.22",
         "yajra/laravel-datatables-oracle": "^9.11"
     },
     "require-dev": {
