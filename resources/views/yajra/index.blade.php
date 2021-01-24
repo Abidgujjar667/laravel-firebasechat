@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
     <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css"/>
     <link href="{{ url('assets/editor/css/editor.bootstrap4.css') }}" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 
 <div class="container mt-5">
-    <h2 class="mb-4">Laravel 7 Yajra Datatables Example</h2>
+    <h2 class="mb-4">Laravel 7 Yajra Datatables Editor Example</h2>
     <div class="d-flex justify-content-end">
         <div style="text-align: right;" class="btn-group mb-3" id="dtButtons" role="group" aria-label="Button group with nested dropdown">
         </div>
     </div>
-    <table id="kt_datatable" class="table table-bordered yajra-datatable w-100">
+    <table id="kt_datatable" class="table text-center table-bordered yajra-datatable " style="width: 100%;">
         <thead>
         <tr>
             <th>No</th>
@@ -27,6 +28,7 @@
             <th>Username</th>
             <th>Phone</th>
             <th>DOB</th>
+            <th>Image</th>
         </tr>
         </thead>
         <tbody>
@@ -68,7 +70,17 @@
                 {label: "email :", name: "email"},
                 {label: "username :", name: "username"},
                 {label: "phone :", name: "phone"},
-                {label: "dob :", name: "dob"},
+                {label: "dob :", name: "dob",
+                    type:'date',
+                },
+                {label: "image :", name: "image",
+                    type:'upload',
+                    display: function (file_id) {
+                        return '<img src="'+tableEditor.file('files',file_id).web_path+'"/>';
+                    },
+                    clearText:'clear',
+                    noImageText:'No Image'
+                },
 
             ],
 
@@ -76,12 +88,14 @@
         $('#kt_datatable').on('click', 'tbody td:not(:first-child)', function (e) {
             tableEditor.inline( this ,{
                 onBlur: 'submit',
-                scope:'cell'
+                scope:'cell',
+                /*buttons: { label: '&gt;', fn: function () { this.submit(); } }*/
             });
         });
         var table = $('#kt_datatable').DataTable({
             processing: true,
             serverSide: true,
+            responsive:true,
             dom: 'Bfltip',
             ajax: "{{ url('students') }}",
             columns: [
@@ -92,6 +106,15 @@
                 {data: 'username', name: 'username'},
                 {data: 'phone', name: 'phone'},
                 {data: 'dob', name: 'dob'},
+                {data: 'image', name: 'image',
+                    render: function ( file_id ) {
+                        return file_id ?
+                            '<img src="'+tableEditor.file( 'files', file_id ).web_path+'"/>' :
+                            null;
+                    },
+                    defaultContent: "No image",
+                    title: "Image"
+                },
 
 
             ],
