@@ -53,6 +53,7 @@
 
 
 <script type="text/javascript">
+    var HOST_URL=window.location.origin+'/';
     $(function () {
         $.ajaxSetup({
             headers: {
@@ -76,7 +77,7 @@
                 {label: "image :", name: "image",
                     type:'upload',
                     display: function (file_id) {
-                        return '<img src="'+tableEditor.file('files',file_id).web_path+'"/>';
+                        return '<img style="height: auto;width: 50px;" src="'+HOST_URL+file_id+'"/>';
                     },
                     clearText:'clear',
                     noImageText:'No Image'
@@ -109,7 +110,7 @@
                 {data: 'image', name: 'image',
                     render: function ( file_id ) {
                         return file_id ?
-                            '<img src="'+tableEditor.file( 'files', file_id ).web_path+'"/>' :
+                            '<img style="height: auto;width: 50px;" src="'+HOST_URL+file_id+'"/>' :
                             null;
                     },
                     defaultContent: "No image",

@@ -16,7 +16,7 @@ class StudentsDataTableEditor extends DataTablesEditor
     protected $model = Student::class;
     protected $actions = ['create', 'edit', 'remove', 'upload'];
 
-    protected $uploadDir = '/storage/brands';
+    protected $uploadDir = 'uploads/student';
 
     protected $imageWidth = 500;
 
@@ -60,7 +60,7 @@ class StudentsDataTableEditor extends DataTablesEditor
         try {
             $request->validate($this->uploadRules());
 
-            $type = $request->input('uploadField');
+            $type = $request->input('image');
             $dir  = $this->uploadDir . $type;
 
             $uploadedFile = $request->file('upload');
@@ -86,7 +86,7 @@ class StudentsDataTableEditor extends DataTablesEditor
                 'data'        => [],
                 'fieldErrors' => [
                     [
-                        'name'   => $request->get('uploadField'),
+                        'name'   => $request->get('image'),
                         'status' => $exception->getMessage(),
                     ],
                 ],
