@@ -5,29 +5,38 @@ var KTDatatablesDataSourceAjaxServer = function() {
 		var table = $('#kt_datatable');
 
 		// begin first table
-	var newTable=	table.DataTable({
+		table.DataTable({
 			responsive: true,
 			searchDelay: 500,
 			processing: true,
 			serverSide: true,
-			headers: {
-	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	        },
-			ajax: HOST_URL + "/admin/users/view",
-
-
+			ajax: {
+				url: HOST_URL + '/api/datatables/demos/server.php',
+				type: 'POST',
+				data: {
+					// parameters for custom backend script demo
+					columnsDef: [
+						'OrderID', 'Country',
+						'ShipAddress', 'CompanyName', 'ShipDate',
+						'Status', 'Type', 'Actions'],
+				},
+			},
 			columns: [
-
-                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-				{data: 'firstname','name':'users.firstname'},
-				{data: 'lastname'},
-				{data: 'username'},
-				{data: 'country'},
-				{data: 'mobile'},
-				{data: 'email'},
-                {data: 'status'},
-				/*{data: null,name:'users.firstname', responsivePriority: -1},*/
-				{data: 'id', render: function(id) {
+				{data: 'OrderID'},
+				{data: 'Country'},
+				{data: 'ShipAddress'},
+				{data: 'CompanyName'},
+				{data: 'ShipDate'},
+				{data: 'Status'},
+				{data: 'Type'},
+				{data: 'Actions', responsivePriority: -1},
+			],
+			columnDefs: [
+				{
+					targets: -1,
+					title: 'Actions',
+					orderable: false,
+					render: function(data, type, full, meta) {
 						return '\
 							<div class="dropdown dropdown-inline">\
 								<a href="javascript:;" class="btn btn-sm btn-clean btn-icon" data-toggle="dropdown">\
@@ -35,33 +44,21 @@ var KTDatatablesDataSourceAjaxServer = function() {
 	                            </a>\
 							  	<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">\
 									<ul class="nav nav-hoverable flex-column">\
-							    		<li class="nav-item"><a class="nav-link" href="'+HOST_URL+'/admin/edituser/'+id+'"><i class="nav-icon la la-edit"></i><span class="nav-text">Edit Details</span></a></li>\
-							    		<li class="nav-item"><a class="nav-link" href="'+HOST_URL+'/admin/unblockuser/'+id+'"><i class="nav-icon la la-leaf"></i><span class="nav-text">Unblock</span></a></li>\
-							    		<li class="nav-item"><a class="nav-link" href="'+HOST_URL+'/admin/userdetails/'+id+'"><i class="nav-icon las la-arrow-up"></i><span class="nav-text">Details</span></a></li>\
+							    		<li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-edit"></i><span class="nav-text">Edit Details</span></a></li>\
+							    		<li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-leaf"></i><span class="nav-text">Update Status</span></a></li>\
 							    		<li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-print"></i><span class="nav-text">Print</span></a></li>\
 									</ul>\
 							  	</div>\
 							</div>\
-							<a href="'+HOST_URL+'/admin/edituser/'+id+'" class="btn btn-sm btn-clean btn-icon" title="Edit details">\
+							<a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Edit details">\
 								<i class="la la-edit"></i>\
 							</a>\
-							<a href="'+HOST_URL+'/admin/deleteuser/'+id+'" class="btn btn-sm btn-clean btn-icon" title="Delete">\
+							<a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">\
 								<i class="la la-trash"></i>\
-							</a>\
-							<a href="'+HOST_URL+'/admin/blockuser/'+id+'" class="btn btn-sm btn-clean btn-icon" title="Block">\
-								<i class="la la-ban"></i>\
-							</a>\
-							<a href="'+HOST_URL+'/admin/userdetails/'+id+'" class="btn btn-sm btn-clean btn-icon" title="Details">\
-								<i class="las la-arrow-up"></i>\
 							</a>\
 						';
 					},
-                },
-
-                    ],
-			columnDefs: [
-
-                {'bSortable': false, 'aTargets': [0]},{'bSearchable': false, 'aTargets': [0]},
+				},
 				{
 					width: '75px',
 					targets: -3,
@@ -99,11 +96,6 @@ var KTDatatablesDataSourceAjaxServer = function() {
 				},
 			],
 		});
-        /*newTable.on( 'order.dt search.dt', function () {
-            newTable.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-                cell.innerHTML = i+1;
-            } );
-        } ).draw();*/
 	};
 
 	return {

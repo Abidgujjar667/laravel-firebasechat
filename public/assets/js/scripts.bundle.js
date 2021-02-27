@@ -9090,12 +9090,20 @@ KTUtil.ready(function() {
     // Init Header Topbar For Mobile Mode
     KTLayoutHeaderTopbar.init('kt_header_mobile_topbar_toggle');
 
+    // Init Brand Panel For Logo
+    KTLayoutBrand.init('kt_brand');
+
     // Init Aside
     KTLayoutAside.init('kt_aside');
 
+    // Init Aside Menu Toggle
+    KTLayoutAsideToggle.init('kt_aside_toggle');
+
+    // Init Aside Menu
+    KTLayoutAsideMenu.init('kt_aside_menu');
+
     // Init Subheader
     KTLayoutSubheader.init('kt_subheader');
-    KTLayoutAdvanceSearch.init();
 
     // Init Content
     KTLayoutContent.init('kt_content');
@@ -9138,12 +9146,200 @@ KTUtil.ready(function() {
     // Init Quick User Panel
     KTLayoutQuickUser.init('kt_quick_user');
 
-    // Init Quick Search Offcanvas Panel
+    // Init Quick Search Panel
     KTLayoutQuickSearch.init('kt_quick_search');
 
-    // Init Search Example For Quick Search Offcanvas Panel
+    // Init Quick Cart Panel
+    KTLayoutQuickCartPanel.init('kt_quick_cart');
+
+    // Init Search For Quick Search Dropdown
+    KTLayoutSearch().init('kt_quick_search_dropdown');
+
+    // Init Search For Quick Search Offcanvas Panel
     KTLayoutSearchOffcanvas().init('kt_quick_search_offcanvas');
 });
+
+"use strict";
+
+var KTLayoutAsideMenu = function() {
+    // Private properties
+    var _element;
+    var _menuObject;
+
+	// Initialize
+	var _init = function() {
+		var menuDesktopMode = (KTUtil.attr(_element, 'data-menu-dropdown') === '1' ? 'dropdown' : 'accordion');
+        var scroll;
+
+		if (KTUtil.attr(_element, 'data-menu-scroll') === '1') {
+			scroll = {
+				rememberPosition: true, // remember position on page reload
+				height: function() { // calculate available scrollable area height
+					var height = parseInt(KTUtil.getViewPort().height);
+
+					if (KTUtil.isBreakpointUp('lg')) {
+						height = height - KTLayoutBrand.getHeight();
+					}
+
+					height = height - (parseInt(KTUtil.css(_element, 'marginBottom')) + parseInt(KTUtil.css(_element, 'marginTop')));
+
+					return height;
+				}
+			};
+		}
+
+		_menuObject = new KTMenu(_element, {
+			// Vertical scroll
+			scroll: scroll,
+
+			// Submenu setup
+			submenu: {
+				desktop: menuDesktopMode,
+				tablet: 'accordion', // menu set to accordion in tablet mode
+				mobile: 'accordion' // menu set to accordion in mobile mode
+			},
+
+			// Accordion setup
+			accordion: {
+				expandAll: false // allow having multiple expanded accordions in the menu
+			}
+		});
+
+        // Disable menu click if aside is fixed and minimized
+        _menuObject.on('submenuToggle', function(menu) {
+            if (KTLayoutAside.isMinimized() === true  && KTLayoutAside.isHoverable() === false) {
+                return false;
+            }
+        });
+
+        // Close aside offcanvas panel before page reload On tablet and mobile
+        _menuObject.on('linkClick', function(menu) {
+            if (KTUtil.isBreakpointDown('lg')) { // Tablet and mobile mode
+                KTLayoutAside.getOffcanvas().hide(); // Hide offcanvas after general link click
+            }
+        });
+	}
+
+    // Public methods
+	return {
+		init: function(id) {
+            _element = KTUtil.getById(id);
+
+            if (!_element) {
+                return;
+            }
+
+            // Initialize menu
+            _init();
+		},
+
+		getElement: function() {
+			return _element;
+		},
+
+        getMenu: function() {
+			return _menuObject;
+		},
+
+        pauseDropdownHover: function(time) {
+			if (_menuObject) {
+				_menuObject.pauseDropdownHover(time);
+			}
+		},
+
+		closeMobileOffcanvas: function() {
+			if (_menuObject && KTUtil.isMobileDevice()) {
+				_menuObject.hide();
+			}
+		}
+	};
+}();
+
+// Webpack support
+if (typeof module !== 'undefined') {
+	module.exports = KTLayoutAsideMenu;
+}
+
+"use strict";
+
+var KTLayoutAsideToggle = function() {
+    // Private properties
+    var _body;
+    var _element;
+    var _toggleObject;
+
+	// Initialize
+	var _init = function() {
+		_toggleObject = new KTToggle(_element, {
+			target: _body,
+			targetState: 'aside-minimize',
+			toggleState: 'active'
+		});
+
+		_toggleObject.on('toggle', function(toggle) {
+            // Update sticky card
+            if (typeof KTLayoutStickyCard !== 'undefined') {
+                KTLayoutStickyCard.update();
+            }
+
+            // Pause header menu dropdowns
+            if (typeof KTLayoutHeaderMenu !== 'undefined') {
+                KTLayoutHeaderMenu.pauseDropdownHover(800);
+            }
+
+            // Pause aside menu dropdowns
+            if (typeof KTLayoutAsideMenu !== 'undefined') {
+                KTLayoutAsideMenu.pauseDropdownHover(800);
+            }
+
+            // Remember state in cookie
+			KTCookie.setCookie('kt_aside_toggle_state', toggle.getState());
+			// to set default minimized left aside use this cookie value in your
+			// server side code and add "kt-primary--minimize aside-minimize" classes to
+			// the body tag in order to initialize the minimized left aside mode during page loading.
+		});
+
+		_toggleObject.on('beforeToggle', function(toggle) {
+			if (KTUtil.hasClass(_body, 'aside-minimize') === false && KTUtil.hasClass(_body, 'aside-minimize-hover')) {
+				KTUtil.removeClass(_body, 'aside-minimize-hover');
+			}
+		});
+	}
+
+    // Public methods
+	return {
+		init: function(id) {
+            _element = KTUtil.getById(id);
+            _body = KTUtil.getBody();
+
+            if (!_element) {
+                return;
+            }
+
+            // Initialize
+            _init();
+		},
+
+        getElement: function() {
+            return _element;
+        },
+
+        getToggle: function() {
+			return _toggleObject;
+		},
+
+		onToggle: function(handler) {
+			if (typeof _toggleObject.element !== 'undefined') {
+				_toggleObject.on('toggle', handler);
+			}
+		}
+	};
+}();
+
+// Webpack support
+if (typeof module !== 'undefined') {
+	module.exports = KTLayoutAsideToggle;
+}
 
 "use strict";
 
@@ -9168,34 +9364,63 @@ var KTLayoutAside = function() {
 				state: 'mobile-toggle-active'
 			}
 		});
+
+		// Handle Minimized Aside Hover
+		if (KTUtil.hasClass(_body, 'aside-fixed') && KTUtil.hasClass(_body, 'aside-minimize-hoverable')) {
+			var insideTm;
+			var outsideTm;
+
+            // Handle Aside Hover Mode
+			KTUtil.addEvent(_element, 'mouseenter', function(e) {
+				e.preventDefault();
+
+				if (KTUtil.isBreakpointUp('lg') === false) {
+					return;
+				}
+
+				if (outsideTm) {
+					clearTimeout(outsideTm);
+					outsideTm = null;
+				}
+
+				insideTm = setTimeout(function() {
+					if (KTUtil.hasClass(_body, 'aside-minimize') && KTUtil.isBreakpointUp('lg')) {
+						KTUtil.removeClass(_body, 'aside-minimize');
+
+						// Hover class
+						KTUtil.addClass(_body, 'aside-minimize-hover');
+
+						KTLayoutAsideMenu.getMenu().scrollUpdate();
+						KTLayoutAsideMenu.getMenu().scrollTop();
+					}
+				}, 50);
+			});
+
+			KTUtil.addEvent(_element, 'mouseleave', function(e) {
+				e.preventDefault();
+
+				if (KTUtil.isBreakpointUp('lg') === false) {
+					return;
+				}
+
+				if (insideTm) {
+					clearTimeout(insideTm);
+					insideTm = null;
+				}
+
+				outsideTm = setTimeout(function() {
+				    if (KTUtil.hasClass(_body, 'aside-minimize-hover') && KTUtil.isBreakpointUp('lg')) {
+					    KTUtil.removeClass(_body, 'aside-minimize-hover');
+					    KTUtil.addClass(_body, 'aside-minimize');
+
+						// Hover class
+                        KTLayoutAsideMenu.getMenu().scrollUpdate();
+						KTLayoutAsideMenu.getMenu().scrollTop();
+					}
+				}, 100);
+			});
+		}
 	}
-
-    var _initNav = function() {
-        var asideNav = KTUtil.find(_element, '.aside-nav');
-
-        if (!asideNav) {
-            return;
-        }
-
-        KTUtil.scrollInit(asideNav, {
-            disableForMobile: true,
-            resetHeightOnDestroy: true,
-            handleWindowResize: true,
-            height: function() {
-                var height = parseInt(KTUtil.getViewPort().height);
-                var asideBrand = KTUtil.find(_element, '.aside-brand');
-                var asideFooter = KTUtil.find(_element, '.aside-footer');
-
-                height = height - (parseInt(KTUtil.css(asideBrand, 'height')));
-                height = height - (parseInt(KTUtil.css(asideBrand, 'marginBottom')) + parseInt(KTUtil.css(asideBrand, 'marginTop')));
-
-                height = height - (parseInt(KTUtil.css(asideFooter, 'height')));
-                height = height - (parseInt(KTUtil.css(asideFooter, 'marginBottom')) + parseInt(KTUtil.css(asideFooter, 'marginTop')));
-
-                return height;
-            }
-        });
-    }
 
     // Public methods
 	return {
@@ -9209,7 +9434,6 @@ var KTLayoutAside = function() {
 
             // Initialize
             _init();
-            _initNav();
         },
 
         getElement: function() {
@@ -9218,6 +9442,18 @@ var KTLayoutAside = function() {
 
         getOffcanvas: function() {
             return _offcanvasObject;
+        },
+
+        isFixed: function() {
+            return KTUtil.hasClass(_body, 'aside-fixed');
+        },
+
+        isMinimized: function() {
+            return (KTUtil.hasClass(_body, 'aside-fixed') && KTUtil.hasClass(_body, 'aside-minimize'));
+        },
+
+        isHoverable: function() {
+            return (KTUtil.hasClass(_body, 'aside-fixed') && KTUtil.hasClass(_body, 'aside-minimize-hoverable'));
         }
 	};
 }();
@@ -9225,6 +9461,48 @@ var KTLayoutAside = function() {
 // Webpack support
 if (typeof module !== 'undefined') {
 	module.exports = KTLayoutAside;
+}
+
+"use strict";
+
+var KTLayoutBrand = function() {
+    // Private properties
+    var _element;
+
+    // Private functions
+    var _getHeight = function() {
+        var height = 0;
+
+        if (_element) {
+            height = KTUtil.actualHeight(_element);
+        }
+
+        return height;
+    }
+
+    // Public methods
+	return {
+		init: function(id) {
+            _element = KTUtil.getById(id);
+
+            if (!_element) {
+                return;
+            }
+		},
+
+        getElement: function() {
+            return _element;
+        },
+
+        getHeight: function() {
+            return _getHeight();
+        }
+	};
+}();
+
+// Webpack support
+if (typeof module !== 'undefined') {
+	module.exports = KTLayoutBrand;
 }
 
 "use strict";
@@ -9241,7 +9519,7 @@ var KTLayoutContent = function() {
 
         if (_element) {
             height = height - parseInt(KTUtil.css(_element, 'paddingTop')) - parseInt(KTUtil.css(_element, 'paddingBottom'));
-        }        
+        }
 
         height = height - KTLayoutHeader.getHeight();
         height = height - KTLayoutSubheader.getHeight();
@@ -9329,7 +9607,7 @@ var KTLayoutHeaderMenu = function() {
 				state: 'mobile-toggle-active'
 			}
 		});
-
+		
 		_menuObject = new KTMenu(_menuElement, {
 			submenu: {
 				desktop: 'dropdown',
@@ -9341,6 +9619,13 @@ var KTLayoutHeaderMenu = function() {
 				expandAll: false // allow having multiple expanded accordions in the menu
 			}
 		});
+
+		// Close aside offcanvas panel before page reload On tablet and mobile
+        _menuObject.on('linkClick', function(menu) {
+            if (KTUtil.isBreakpointDown('lg')) { // Tablet and mobile mode
+                _offcanvasObject.hide(); // Hide offcanvas after general link click
+            }
+        });
 	}
 
     // Public methods
@@ -9401,11 +9686,11 @@ var KTLayoutHeaderTopbar = function() {
 
     // Private functions
     var _init = function() {
-		_toggleObject = new KTToggle(_toggleElement, {
-			target: KTUtil.getBody(),
-			targetState: 'topbar-mobile-on',
-			toggleState: 'topbar-toggle-active'
-		});
+			_toggleObject = new KTToggle(_toggleElement, {
+				target: KTUtil.getBody(),
+				targetState: 'topbar-mobile-on',
+				toggleState: 'active',
+			});
     }
 
     // Public methods
@@ -9698,110 +9983,6 @@ var KTLayoutSubheader = function() {
 // Webpack support
 if (typeof module !== 'undefined') {
 	module.exports = KTLayoutSubheader;
-}
-
-"use strict";
-
-var KTLayoutAdvanceSearch = function () {
-
-    // define vars
-    var mapLoaded = false;
-    var selectionLocation = "";
-
-    // Private functions
-    var _init = function () {
-        // Define Dropdown ID
-        const category_id = 'kt_searchbar_7_category-options';
-        const location_id = 'kt_subheader_7_location';
-
-        // Dropdown Item Click Action
-        $(`#${category_id}`).find(`.dropdown-item`).click(function () {
-            const value = $(this).text();
-            $(`input[data-target="${category_id}"`).val(value);
-        });
-
-        // init map on open modal
-        $('#subheader7Modal').on('shown.bs.modal', function (e) {
-            if (!mapLoaded) {
-                _initMap();
-                mapLoaded = true;
-            }
-        });
-
-        // modal submit button on click
-        $('#subheader7Modal').find('#submit').click(function () {
-            if (selectionLocation != "") {
-                $(`#${location_id}`).val(selectionLocation);
-            }
-        });
-    }
-
-    var _initMap = function () {
-        // Check if Leaflet is included
-        if (!L) {
-            return;
-        }
-
-        // Define Map Location
-        var leaflet = L.map('kt_subheader_leaflet', {
-            center: [40.725, -73.985],
-            zoom: 30
-        });
-
-        // Init Leaflet Map
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(leaflet);
-
-        // Set Geocoding
-        var geocodeService;
-        if (typeof L.esri.Geocoding === 'undefined') {
-            geocodeService = L.esri.geocodeService();
-        } else {
-            geocodeService = L.esri.Geocoding.geocodeService();
-        }
-
-        // Define Marker Layer
-        var markerLayer = L.layerGroup().addTo(leaflet);
-
-        // Set Custom SVG icon marker
-        var leafletIcon = L.divIcon({
-            html: `<span class="svg-icon svg-icon-danger svg-icon-3x"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="24" width="24" height="0"/><path d="M5,10.5 C5,6 8,3 12.5,3 C17,3 20,6.75 20,10.5 C20,12.8325623 17.8236613,16.03566 13.470984,20.1092932 C12.9154018,20.6292577 12.0585054,20.6508331 11.4774555,20.1594925 C7.15915182,16.5078313 5,13.2880005 5,10.5 Z M12.5,12 C13.8807119,12 15,10.8807119 15,9.5 C15,8.11928813 13.8807119,7 12.5,7 C11.1192881,7 10,8.11928813 10,9.5 C10,10.8807119 11.1192881,12 12.5,12 Z" fill="#000000" fill-rule="nonzero"/></g></svg></span>`,
-            bgPos: [10, 10],
-            iconAnchor: [20, 37],
-            popupAnchor: [0, -37],
-            className: 'leaflet-marker'
-        });
-
-        // Map onClick Action
-        leaflet.on('click', function (e) {
-            geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
-                if (error) {
-                    return;
-                }
-                markerLayer.clearLayers();
-                selectionLocation = result.address.Match_addr;
-                L.marker(result.latlng, { icon: leafletIcon }).addTo(markerLayer).bindPopup(result.address.Match_addr, { closeButton: false }).openPopup();
-            });
-        });
-    }
-
-    // Public methods
-    return {
-        init: function () {
-            // Check if Leaflet is included
-            if (typeof L === 'undefined') {
-                return;
-            }
-
-            _init();
-        }
-    };
-}();
-
-// Webpack support
-if (typeof module !== 'undefined') {
-    module.exports = KTLayoutAdvanceSearch;
 }
 
 "use strict";

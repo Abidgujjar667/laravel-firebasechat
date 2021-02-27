@@ -7609,10 +7609,10 @@ $.extend( _buttons, {
 			var editor = config.editor;
 			var buttons = config.formButtons;
 
-			this.processing=true;
+			this.processing(true);
 			editor
 				.one( 'preOpen', function () {
-					this.processing=false;
+					that.processing(false);
 				})
 				.create( {
 					buttons: config.formButtons,
