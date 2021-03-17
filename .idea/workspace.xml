@@ -3,21 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b1cc10b-bccf-4baa-b533-9919476cb426" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.bundle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.bundle.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.bundle.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/editor/js/dataTables.editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/editor/js/dataTables.editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/crud/datatables/data-sources/ajax-server-side-package.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/crud/datatables/data-sources/ajax-server-side.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/pages/crud/datatables/data-sources/ajax-server-side.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/pages/crud/forms/widgets/form-repeater.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/pages/crud/forms/widgets/form-repeater.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/scripts.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/scripts.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/scripts.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/scripts.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/student/1611562217.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/student/1611562343.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/student/1611562526.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/student/1611565049.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/student/1611565100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/student/1611565674.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/yajra/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/yajra/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="270">
+              <caret line="44" column="64" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
               <folding>
                 <element signature="e#7#44#0#PHP" expanded="true" />
               </folding>
@@ -43,38 +29,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudentsController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Multilevel/MultiCategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            <state relative-caret-position="244">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
+                <element signature="e#51#87#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/yajra/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/multilevel/categories.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/DataTables/StudentsDataTableEditor.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/multilevel/child_category.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
-              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-              <folding>
-                <element signature="e#34#57#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="108">
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -113,13 +92,18 @@
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/public/assets/editor/js/dataTables.editor.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StudentsController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_01_24_193317_add_image_to_students_table.php" />
         <option value="$PROJECT_DIR$/app/Models/Student.php" />
         <option value="$PROJECT_DIR$/app/DataTables/StudentsDataTableEditor.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_03_17_024738_create_categories_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/Category.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/yajra/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Multilevel/MultiCategoryController.php" />
+        <option value="$PROJECT_DIR$/resources/views/multilevel/categories.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/multilevel/child_category.blade.php" />
       </list>
     </option>
   </component>
@@ -322,39 +306,16 @@
             <path>
               <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Multilevel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
@@ -372,7 +333,7 @@
               <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="yajra" type="462c0819:PsiDirectoryNode" />
+              <item name="multilevel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
@@ -437,18 +398,19 @@
       <workItem from="1611296038194" duration="357000" />
       <workItem from="1611498418728" duration="17010000" />
       <workItem from="1611558651360" duration="6709000" />
-      <workItem from="1614395580630" duration="3003000" />
+      <workItem from="1614395580630" duration="7151000" />
+      <workItem from="1615949026482" duration="2730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69806000" />
+    <option name="totallyTimeSpent" value="76684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -463,7 +425,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.049099836" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2569558" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -663,9 +625,6 @@
         <state relative-caret-position="-128" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -701,13 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="11" column="29" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/yajra/student.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="106" selection-end-line="85" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -772,9 +724,30 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/storage/brandsimage/1611558833.png" />
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="25" column="50" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="25" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="15" selection-start-line="6" selection-end-line="6" selection-end-column="15" />
+          <folding>
+            <element signature="e#242#350#0#PHP" />
+            <element signature="e#356#462#0#PHP" />
+            <element signature="e#468#533#0#PHP" />
+            <element signature="e#539#786#0#PHP" />
+            <element signature="e#792#904#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/DataTables/StudentsDataTableEditor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
+        <state relative-caret-position="297">
           <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
           <folding>
             <element signature="e#34#57#0#PHP" expanded="true" />
@@ -782,34 +755,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudentsController.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_17_024738_create_categories_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        <state relative-caret-position="243">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#30#84#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        <state relative-caret-position="270">
+          <caret line="44" column="64" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
           <folding>
             <element signature="e#7#44#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/yajra/student.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="108" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/yajra/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        <state relative-caret-position="162">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
           <folding>
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Multilevel/MultiCategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="e#51#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/multilevel/child_category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/multilevel/categories.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
         </state>
       </provider>
     </entry>

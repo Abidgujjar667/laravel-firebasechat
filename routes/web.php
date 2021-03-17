@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\Multilevel\MultiCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,5 @@ Route::get('/students',[StudentsController::class,'getStudent']);
 
 Route::post('/students',[StudentsController::class,'postStudent']);
 
-
+//multilevel category with recursive
+ Route::get('/categories',[MultiCategoryController::class,'index']);
