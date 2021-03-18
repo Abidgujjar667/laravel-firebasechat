@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\Multilevel\MultiCategoryController;
+use App\Http\Controllers\Firebase\FirebaseSmsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,8 @@ Route::post('/students',[StudentsController::class,'postStudent']);
 
 //multilevel category with recursive
  Route::get('/categories',[MultiCategoryController::class,'index']);
+
+ //firebase notification and message
+Route::get('/firebase',[FirebaseSmsController::class,'index']);
+Route::get('/firenotify',[FirebaseSmsController::class,'sendNotification']);
+Route::get('/firesms',[FirebaseSmsController::class,'sendMessage']);
