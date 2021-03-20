@@ -49,3 +49,12 @@ Route::post('/students',[StudentsController::class,'postStudent']);
 Route::get('/firebase',[FirebaseSmsController::class,'index']);
 Route::get('/firenotify',[FirebaseSmsController::class,'sendNotification']);
 Route::get('/firesms',[FirebaseSmsController::class,'sendMessage']);
+
+Route::group(['prefix'=>'/admin'],function (){
+    Route::get('/home',[FirebaseSmsController::class,'home']);
+    Route::get('/sendsms',[FirebaseSmsController::class,'sendSMS']);
+});
+
+Route::group(['prefix'=>'/profile'],function (){
+    Route::post('/token',[FirebaseSmsController::class,'updateToken']);
+});
