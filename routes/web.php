@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\Multilevel\MultiCategoryController;
 use App\Http\Controllers\Firebase\FirebaseSmsController;
+use App\Http\Controllers\Firebase\FirebaseChatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,10 +52,11 @@ Route::get('/firenotify',[FirebaseSmsController::class,'sendNotification']);
 Route::get('/firesms',[FirebaseSmsController::class,'sendMessage']);
 
 Route::group(['prefix'=>'/admin'],function (){
-    Route::get('/home',[FirebaseSmsController::class,'home']);
-    Route::get('/sendsms',[FirebaseSmsController::class,'sendSMS']);
+    Route::get('/home',[FirebaseChatController::class,'home']);
+    Route::get('/sendsms',[FirebaseChatController::class,'sendSMS']);
 });
 
 Route::group(['prefix'=>'/profile'],function (){
-    Route::post('/token',[FirebaseSmsController::class,'updateToken']);
+    Route::get('/',[FirebaseChatController::class,'index']);
+    Route::post('/token',[FirebaseChatController::class,'updateToken']);
 });

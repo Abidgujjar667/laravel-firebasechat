@@ -4,47 +4,50 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 @endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
 
-                    {{ __('You are logged in!') }}
-                </div>
-                <div class="card-footer">
-                    <div class="container mt-5">
-                        <div class="form-group" style="display: none;">
-                            <label>Token:</label>
-                            <div class="alert alert-primary text-break" role="alert" id="token"></div>
-                        </div>
-                        <div class="form-group">
-                            <label>Title:</label>
-                            <div class="alert alert-warning text-break" role="alert" id="title"></div>
+                        {{ __('You are logged in!') }}
+                    </div>
+                    <div class="card-footer">
+                        <div class="container mt-5">
+                            <div class="form-group" style="display: none;">
+                                <label>Token:</label>
+                                <div class="alert alert-primary text-break" role="alert" id="token"></div>
+                            </div>
 
-                        </div>
-                        <div class="form-group" id="recsms">
-                            <label>Messages:</label>
-                            {{--<div class="alert alert-info text-break" role="alert" id="messages"></div>--}}
-                        </div>
+                            <form onsubmit="return false;">
+                                <div class="form-group">
+                                    <label>Title :</label>
+                                    <input type="text" id="title" name="title" placeholder="Enter title">
+                                </div>
+                                <div class="form-group">
+                                    <label>Message :</label>
+                                    <input type="text" id="body" name="body" placeholder="Enter message">
+                                </div>
+                                <div class="form-group">
+                                    <button id="sendbtn" class="btn btn-info">Send Message</button>
+                                    {{--<label>Send Messages:</label>
+                                    <div class="alert alert-info text-break" role="alert" id="messages"></div>--}}
+                                </div>
+                            </form>
 
-                        <div class="form-group">
-                            <label>Errors:</label>
-                            <div class="alert alert-danger text-break" role="alert" id="error"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @section('js')
@@ -52,8 +55,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
+
+    {{--<script>
         messagesElement = document.getElementById('messages');
         tokenElement = document.getElementById('token');
         errorElement = document.getElementById('error');
@@ -83,7 +86,7 @@
             })
             .then(function (token) {
                 tokenElement.innerHTML = token;
-                updateTokn(token);
+                //updateTokn(token);
             })
             .catch(function (err) {
                 errorElement.innerHTML = err
@@ -92,34 +95,18 @@
 
         messaging.onMessage((payload) => {
             console.log('Message received. ', payload);
-
-            //code for notification
-            /*const noteTitle = payload.notification.title;
-            const noteOptions = {
-                body: payload.notification.body,
-                icon: payload.notification.icon,
-            };
-            new Notification(noteTitle, noteOptions);*/
-
-            //code for message
             appendMessage(payload);
         });
 
         function appendMessage(payload) {
-            /*const messagesElement = document.querySelector('#messages');
+            const messagesElement = document.querySelector('#messages');
             const dataHeaderElement = document.createElement('h5');
             const dataElement = document.createElement('pre');
             dataElement.style = 'overflow-x:hidden;';
             dataHeaderElement.textContent = 'Received message:';
-            dataElement.textContent = JSON.stringify(payload.data, null, 2);
+            dataElement.textContent = JSON.stringify(payload.data.body, null, 2);
             messagesElement.appendChild(dataHeaderElement);
-            messagesElement.appendChild(dataElement);*/
-
-            $('#recsms').append('<div class="alert alert-info text-break" role="alert" id="messages">'+payload.data.body+'</div>');
-            const messagesElement = document.querySelector('#messages');
-            const titleElement = document.querySelector('#title');
-            titleElement.textContent=(payload.data.title);
-            //messagesElement.textContent=(payload.data.body);
+            messagesElement.appendChild(dataElement);
         }
 
         //update token in database
@@ -140,5 +127,30 @@
                 }
             });
         }
+
+
+    </script>--}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#sendbtn').on('click',function () {
+                var title=$('#title').val();
+                var body=$('#body').val();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url:'/admin/sendsms',
+                    type: "GET",
+                    data:{title:title,body:body},
+                    dataType: 'json',
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+            });
+        });
     </script>
 @endsection

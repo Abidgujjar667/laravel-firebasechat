@@ -10,11 +10,11 @@ use Kutia\Larafirebase\Facades\Larafirebase;
 class FirebaseSmsController extends Controller
 {
     public function index(){
-        return view('firebase.firebaseSMS');
+        return view('firebasechat.fromuser.index');
     }
 
     public function home(){
-        return view('firebase.adminhome');
+        return view('firebasechat.fromadmin.index');
     }
     public function sendSMS(Request $request)
     {

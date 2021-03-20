@@ -4,47 +4,47 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 @endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
 
-                    {{ __('You are logged in!') }}
-                </div>
-                <div class="card-footer">
-                    <div class="container mt-5">
-                        <div class="form-group" style="display: none;">
-                            <label>Token:</label>
-                            <div class="alert alert-primary text-break" role="alert" id="token"></div>
-                        </div>
-                        <div class="form-group">
-                            <label>Title:</label>
-                            <div class="alert alert-warning text-break" role="alert" id="title"></div>
+                        {{ __('You are logged in!') }}
+                    </div>
+                    <div class="card-footer">
+                        <div class="container mt-5">
+                            <div class="form-group" style="display: none;">
+                                <label>Token:</label>
+                                <div class="alert alert-primary text-break" role="alert" id="token"></div>
+                            </div>
+                            <div class="form-group">
+                                <label>Title:</label>
+                                <div class="alert alert-warning text-break" role="alert" id="title"></div>
 
-                        </div>
-                        <div class="form-group" id="recsms">
-                            <label>Messages:</label>
-                            {{--<div class="alert alert-info text-break" role="alert" id="messages"></div>--}}
-                        </div>
+                            </div>
+                            <div class="form-group" id="recsms">
+                                <label>Messages:</label>
+                                {{--<div class="alert alert-info text-break" role="alert" id="messages"></div>--}}
+                            </div>
 
-                        <div class="form-group">
-                            <label>Errors:</label>
-                            <div class="alert alert-danger text-break" role="alert" id="error"></div>
+                            <div class="form-group">
+                                <label>Errors:</label>
+                                <div class="alert alert-danger text-break" role="alert" id="error"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @section('js')
