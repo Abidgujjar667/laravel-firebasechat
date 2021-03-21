@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\Multilevel\MultiCategoryController;
 use App\Http\Controllers\Firebase\FirebaseSmsController;
 use App\Http\Controllers\Firebase\FirebaseChatController;
+use App\Http\Controllers\Firebase\GroupchatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,12 +52,22 @@ Route::get('/firebase',[FirebaseSmsController::class,'index']);
 Route::get('/firenotify',[FirebaseSmsController::class,'sendNotification']);
 Route::get('/firesms',[FirebaseSmsController::class,'sendMessage']);
 
+//firebase real time chat routes
 Route::group(['prefix'=>'/admin'],function (){
     Route::get('/home',[FirebaseChatController::class,'home']);
+    Route::get('/chathome',[FirebaseChatController::class,'adminChat']);
     Route::get('/sendsms',[FirebaseChatController::class,'sendSMS']);
 });
 
 Route::group(['prefix'=>'/profile'],function (){
     Route::get('/',[FirebaseChatController::class,'index']);
     Route::post('/token',[FirebaseChatController::class,'updateToken']);
+});
+
+//firebase real time group routes
+Route::group(['prefix'=>'/group'],function (){
+    Route::get('/chat',[GroupchatController::class,'home']);
+    Route::get('/chathome',[GroupchatController::class,'adminChat']);
+    Route::post('/sendsms',[GroupchatController::class,'sendSMS']);
+    Route::post('/token',[GroupchatController::class,'updateToken']);
 });

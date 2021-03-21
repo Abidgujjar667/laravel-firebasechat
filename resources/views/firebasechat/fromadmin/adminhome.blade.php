@@ -2,45 +2,46 @@
 
 @section('css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"
 @endsection
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h4 class="text-success">Group Chat</h4>
+                            </div>
+                            <div>
+                                <a href="{{ url('admin/chathome') }}" class="btn btn-outline-success ">Join Chat</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
 
-                        {{ __('You are logged in!') }}
                     </div>
                     <div class="card-footer">
-                        <div class="container mt-5">
+                        <div class="container mt-1">
                             <div class="form-group" style="display: none;">
                                 <label>Token:</label>
                                 <div class="alert alert-primary text-break" role="alert" id="token"></div>
                             </div>
 
-                            <form onsubmit="return false;">
-                                <div class="form-group">
-                                    <label>Title :</label>
-                                    <input type="text" id="title" name="title" placeholder="Enter title">
-                                </div>
-                                <div class="form-group">
-                                    <label>Message :</label>
-                                    <input type="text" id="body" name="body" placeholder="Enter message">
-                                </div>
-                                <div class="form-group">
-                                    <button id="sendbtn" class="btn btn-info">Send Message</button>
-                                    {{--<label>Send Messages:</label>
-                                    <div class="alert alert-info text-break" role="alert" id="messages"></div>--}}
-                                </div>
-                            </form>
+                            <div class="chat-input ">
+                                <form onSubmit="return false;">
+                                    <div class="form-group">
+                                        <div class="d-flex justify-content-between">
+                                            <input type="text" value="" class="form-control" id="chat-input" placeholder="Send us a message...">
+                                            <button type="button" class="btn btn-outline-success" data-to-user="" data-from-user="{{ Auth::user()->id }}"  class="chat-submit btn-chat" id="chat-submit">
+                                                <i class="fa fa-paper-plane sendicon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
 
                         </div>
                     </div>
@@ -55,6 +56,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
+    <script src="{{ asset('firebasechat/adminside/js/adminjs.js') }}"></script>
 
     {{--<script>
         messagesElement = document.getElementById('messages');
@@ -134,7 +136,7 @@
     <script>
         $(document).ready(function () {
             $('#sendbtn').on('click',function () {
-                var title=$('#title').val();
+                var id=$('#id').val();
                 var body=$('#body').val();
                 $.ajaxSetup({
                     headers: {
@@ -144,7 +146,7 @@
                 $.ajax({
                     url:'/admin/sendsms',
                     type: "GET",
-                    data:{title:title,body:body},
+                    data:{id:id,body:body},
                     dataType: 'json',
                     success: function (response) {
                         console.log(response);

@@ -7,27 +7,20 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Kutia\Larafirebase\Facades\Larafirebase;
 
-class FirebaseChatController extends Controller
+class GroupchatController extends Controller
 {
-    //user dashboard
-    public function index(){
-        return view('firebasechat.fromuser.home');
-    }
 
     //admin dashboard
     public function home(){
-        return view('firebasechat.fromadmin.adminhome');
+        return view('firebasechat.groupchat.grouphome');
     }
-    //admin dashboard
-    public function adminChat(){
-        return view('firebasechat.fromadmin.adminchat');
-    }
+
 
     //sms from admin
     public function sendSMS(Request $request)
     {
         $deviceTokens = [];
-        $id=$request->id;
+        //$id=$request->id;
         $body=$request->body;
 
         if ($request->ajax()){
@@ -40,8 +33,7 @@ class FirebaseChatController extends Controller
                 'data'=>$deviceTokens
             ]);*/
 
-            return Larafirebase::withTitle($id)
-                ->withBody($body)
+            return Larafirebase::withBody($body)
                 ->sendMessage($deviceTokens);
 
             // Or
