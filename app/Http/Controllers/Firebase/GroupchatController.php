@@ -20,7 +20,7 @@ class GroupchatController extends Controller
     public function sendSMS(Request $request)
     {
         $deviceTokens = [];
-        //$id=$request->id;
+        $id=$request->id;
         $body=$request->body;
 
         if ($request->ajax()){
@@ -33,7 +33,8 @@ class GroupchatController extends Controller
                 'data'=>$deviceTokens
             ]);*/
 
-            return Larafirebase::withBody($body)
+            return Larafirebase::withTitle($id)
+                ->withBody($body)
                 ->sendMessage($deviceTokens);
 
             // Or
