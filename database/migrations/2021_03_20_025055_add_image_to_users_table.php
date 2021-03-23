@@ -16,6 +16,7 @@ class AddImageToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('image')->nullable();
             $table->string('device_token')->nullable();
+            $table->enum('status',[1,0])->default(1);
         });
     }
 
@@ -29,6 +30,7 @@ class AddImageToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('image');
             $table->dropColumn('device_token');
+            $table->dropColumn('status');
         });
     }
 }

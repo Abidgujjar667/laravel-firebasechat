@@ -39,4 +39,6 @@ if (firebase.messaging.isSupported()) {
             notificationOptions,
         );
     });
+}else {
+    console.log('Messaging is not supported on this browser');
 }

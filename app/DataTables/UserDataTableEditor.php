@@ -15,9 +15,9 @@ class UserDataTableEditor extends DataTablesEditor
 {
     protected $model = User::class;
 
-    protected $actions = ['create', 'edit', 'remove'];
+    protected $actions = ['create', 'edit', 'remove','upload'];
 
-    protected $uploadDir = 'uploads/student';
+    protected $uploadDir = 'uploads/user';
 
     protected $imageWidth = 500;
 
@@ -57,7 +57,7 @@ class UserDataTableEditor extends DataTablesEditor
      * @return array
      */
 
-    /*public function upload(Request $request)
+    public function upload(Request $request)
     {
         try {
             $request->validate($this->uploadRules());
@@ -106,7 +106,7 @@ class UserDataTableEditor extends DataTablesEditor
             ->save();
 
         return $dir . '/' . $filename;
-    }*/
+    }
 
     public function removeRules(Model $model)
     {

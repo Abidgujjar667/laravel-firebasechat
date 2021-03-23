@@ -21,7 +21,9 @@ class GroupchatController extends Controller
     {
         $deviceTokens = [];
         $id=$request->id;
-        $body=$request->body;
+        $name=User::where('id',$id)->first()->name;
+        $body='<h6 class="text-info">'.$name.'</h6>'.
+                '<p>'.$request->body.'</p>';
 
         if ($request->ajax()){
             $users=User::get()->all();
@@ -61,4 +63,22 @@ class GroupchatController extends Controller
         }
 
     }
+
+    //return user name
+    /*public function userName(Request $request){
+        $id=$request->id;
+        $user=User::where('id',$id)->first()->name;
+
+        if ($user){
+            return response()->json([
+                'type'=>'sucess',
+                'data'=>$user
+            ],200);
+        }else{
+            return response()->json([
+                'type'=>'error',
+            ],201);
+        }
+
+    }*/
 }

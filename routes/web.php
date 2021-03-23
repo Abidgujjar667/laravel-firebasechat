@@ -28,6 +28,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/error404', function () {
+    return view('error404');
+});
+Route::get('/error405', function () {
+    return view('error405');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -65,17 +72,20 @@ Route::group(['prefix'=>'/profile'],function (){
     Route::post('/token',[FirebaseChatController::class,'updateToken']);
 });
 
+
+//actual implements here
 //firebase real time chat routes manage
-Route::group(['prefix'=>'/manage'],function (){
+Route::group(['prefix'=>'/manage', 'middleware'=>'admin'],function (){
     Route::get('/',[ManageController::class,'index']);
     Route::get('/fetch',[ManageController::class,'fetch']);
     Route::post('/create',[ManageController::class,'create']);
 });
 
 //firebase real time group routes
-Route::group(['prefix'=>'/group','middleware'=>'auth'],function (){
+Route::group(['prefix'=>'/group','middleware'=>['auth','status']],function (){
     Route::get('/chat',[GroupchatController::class,'home']);
     Route::get('/chathome',[GroupchatController::class,'adminChat']);
     Route::post('/sendsms',[GroupchatController::class,'sendSMS']);
     Route::post('/token',[GroupchatController::class,'updateToken']);
+    /*Route::post('/getuser',[GroupchatController::class,'userName']);*/
 });

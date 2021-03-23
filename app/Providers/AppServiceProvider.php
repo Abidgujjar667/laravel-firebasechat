@@ -26,5 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultstringLength(191);
+        foreach (glob(app_path().'/Helpers/*.php') as $filename){
+            require_once($filename);
+        }
     }
 }

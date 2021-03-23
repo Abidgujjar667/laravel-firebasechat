@@ -3,20 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="2b1cc10b-bccf-4baa-b533-9919476cb426" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DataTables/UserDataTableEditor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/UserDataTableEditor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Firebase/GroupchatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Firebase/GroupchatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_20_025055_add_image_to_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_20_025055_add_image_to_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/firebase-messaging-sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/firebase-messaging-sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/firebasechat/adminside/admincss.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/firebasechat/adminside/css/admincss.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/firebasechat/adminside/js/adminjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/firebasechat/groupchat/groupjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/firebasechat/groupchat/groupjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/firebasechat/userside/usecss.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/student/1614398445.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/student/1614398726.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/student/1615950293.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/firebasechat/groupchat/grouphome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firebasechat/groupchat/grouphome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home1.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/firebasechat/groupchat/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/firebasechat/groupchat/manage.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+            <state relative-caret-position="237">
+              <caret line="89" column="70" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="72" />
               <folding>
                 <element signature="e#7#44#0#PHP" expanded="true" />
               </folding>
@@ -42,42 +41,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Firebase/ManageController.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Firebase/GroupchatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+            <state relative-caret-position="166">
+              <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
               <folding>
                 <element signature="e#49#85#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/DataTables/UserDataTableEditor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding>
-                <element signature="e#34#50#0#PHP" expanded="true" />
-                <element signature="e#1238#2720#0#PHP" />
-                <element signature="e#1199#2361#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/firebasechat/groupchat/manage.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="81" selection-start-line="6" selection-start-column="81" selection-end-line="6" selection-end-column="81" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+                <element signature="e#1739#2130#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -86,34 +57,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/firebasechat/groupchat/grouphome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="84" selection-start-line="84" selection-end-line="84" selection-end-column="14" />
+            <state relative-caret-position="166">
+              <caret line="147" column="102" selection-start-line="147" selection-start-column="102" selection-end-line="147" selection-end-column="102" />
               <folding>
-                <element signature="e#1232#1274#0#HTML" expanded="true" />
-                <element signature="e#2817#2847#0#HTML" expanded="true" />
+                <element signature="e#8042#8590#0#HTML" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/firebasechat/groupchat/manage.js">
+        <entry file="file://$PROJECT_DIR$/app/Helpers/helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="75" column="106" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="75" selection-end-column="106" />
+            <state relative-caret-position="108">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="21" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+                <element signature="e#6#42#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/yajra/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="68" column="63" lean-forward="true" selection-end-line="157" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -151,21 +111,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" />
-        <option value="$PROJECT_DIR$/public/assets/editor/js/dataTables.editor.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StudentsController.php" />
-        <option value="$PROJECT_DIR$/app/Models/Student.php" />
-        <option value="$PROJECT_DIR$/app/DataTables/StudentsDataTableEditor.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2021_03_17_024738_create_categories_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/Category.php" />
-        <option value="$PROJECT_DIR$/resources/views/yajra/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Multilevel/MultiCategoryController.php" />
         <option value="$PROJECT_DIR$/resources/views/multilevel/categories.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/multilevel/child_category.blade.php" />
         <option value="$PROJECT_DIR$/config/larafirebase.php" />
         <option value="$PROJECT_DIR$/resources/views/firebase/firebaseSMS.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_01_24_193317_add_image_to_students_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2021_03_20_025055_add_image_to_users_table.php" />
         <option value="$PROJECT_DIR$/app/Notifications/FirebaseNotification.php" />
         <option value="$PROJECT_DIR$/resources/views/firebase/adminhome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/firebasechat/fromadmin/index.blade.php" />
@@ -177,7 +128,6 @@
         <option value="$PROJECT_DIR$/app/Models/Chat.php" />
         <option value="$PROJECT_DIR$/app/Models/Role.php" />
         <option value="$PROJECT_DIR$/app/Models/AssignRole.php" />
-        <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/vendor/kutia-software-company/larafirebase/src/Messages/FirebaseMessage.php" />
         <option value="$PROJECT_DIR$/resources/views/firebasechat/fromuser/home.blade.php" />
         <option value="$PROJECT_DIR$/public/firebasechat/adminside/style.css" />
@@ -187,21 +137,31 @@
         <option value="$PROJECT_DIR$/public/firebasechat/adminside/js/adminjs.js" />
         <option value="$PROJECT_DIR$/public/firebasechat/adminside/css/admincss.css" />
         <option value="$PROJECT_DIR$/resources/views/firebasechat/fromadmin/adminhome.blade.php" />
-        <option value="$PROJECT_DIR$/public/firebase-messaging-sw.js" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/public/firebasechat/groupchat/groupjs.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Firebase/GroupchatController.php" />
         <option value="$PROJECT_DIR$/public/firebasechat/groupchat/groupcss.css" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/views/firebasechat/groupchat/grouphome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/DataTables/UserDataTableEditor.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Firebase/ManageController.php" />
         <option value="$PROJECT_DIR$/public/firebasechat/groupchat/manage.js" />
+        <option value="$PROJECT_DIR$/database/migrations/2021_03_20_025055_add_image_to_users_table.php" />
+        <option value="$PROJECT_DIR$/app/DataTables/UserDataTableEditor.php" />
+        <option value="$PROJECT_DIR$/app/Models/User.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/CheckMiddleware.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/resources/views/error404.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/StatusMiddleware.php" />
+        <option value="$PROJECT_DIR$/resources/views/error405.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/firebasechat/groupchat/manage.blade.php" />
+        <option value="$PROJECT_DIR$/public/firebase-messaging-sw.js" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Helpers/helper.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/firebasechat/groupchat/grouphome.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Firebase/GroupchatController.php" />
       </list>
     </option>
   </component>
@@ -371,7 +331,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -383,12 +342,6 @@
               <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="DataTables" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
@@ -414,58 +367,57 @@
             <path>
               <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="sound" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
+              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="firebasechat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
               <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="firebasechat" type="462c0819:PsiDirectoryNode" />
               <item name="groupchat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="firebasechat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="firebasechat" type="462c0819:PsiDirectoryNode" />
-              <item name="groupchat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="laravel-datatable" type="b2602c69:ProjectViewProjectNode" />
-              <item name="laravel-datatable" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="yajra" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -525,21 +477,23 @@
       <workItem from="1615949026482" duration="7438000" />
       <workItem from="1616034414908" duration="6738000" />
       <workItem from="1616206943505" duration="14132000" />
-      <workItem from="1616297715553" duration="25559000" />
+      <workItem from="1616297715553" duration="25932000" />
+      <workItem from="1616383210409" duration="12977000" />
+      <workItem from="1616472692846" duration="6976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127821000" />
+    <option name="totallyTimeSpent" value="148147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24886535" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22995462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="File Transfer" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -551,7 +505,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.24713585" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.20130932" />
+      <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -562,82 +517,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudentsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="15" selection-start-line="6" selection-end-line="6" selection-end-column="15" />
-          <folding>
-            <element signature="e#242#350#0#PHP" />
-            <element signature="e#356#462#0#PHP" />
-            <element signature="e#468#533#0#PHP" />
-            <element signature="e#539#786#0#PHP" />
-            <element signature="e#792#904#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_17_024738_create_categories_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="38" />
-          <folding>
-            <element signature="e#30#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/multilevel/child_category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="63" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/multilevel/categories.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Multilevel/MultiCategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="e#51#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/larafirebase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="181" selection-start-line="4" selection-start-column="181" selection-end-line="4" selection-end-column="181" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_01_24_193317_add_image_to_students_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="55" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="17" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_20_025055_add_image_to_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Notifications/FirebaseNotification.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -730,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1971">
-          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/kutia-software-company/larafirebase/src/Messages/FirebaseMessage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -751,20 +623,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/firebasechat/adminside/admincss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="1" selection-end-line="134" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/firebasechat/userside/usecss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="134" column="1" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/firebasechat/adminside/admincss.css" />
+    <entry file="file://$PROJECT_DIR$/public/firebasechat/userside/usecss.css" />
     <entry file="file://$PROJECT_DIR$/resources/views/firebasechat/fromuser/userchat.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -779,12 +639,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/firebasechat/adminside/css/admincss.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/firebasechat/adminside/js/adminjs.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/firebasechat/adminside/css/admincss.css" />
+    <entry file="file://$PROJECT_DIR$/public/firebasechat/adminside/js/adminjs.js" />
     <entry file="file://$PROJECT_DIR$/resources/views/firebasechat/fromadmin/adminhome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -830,25 +686,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/firebase-messaging-sw.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="26" selection-end-column="10" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/firebasechat/groupchat/groupcss.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/firebasechat/groupchat/groupjs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -888,26 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Firebase/GroupchatController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <element signature="e#49#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
-          <folding>
-            <element signature="e#7#44#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/yajra/student.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-945">
@@ -917,8 +736,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/firebasechat/groupchat/manage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="75" column="106" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="75" selection-end-column="106" />
+        <state relative-caret-position="2025">
+          <caret line="75" column="106" selection-start-line="74" selection-start-column="12" selection-end-line="75" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/yajra/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="68" column="63" selection-end-line="157" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2021_03_20_025055_add_image_to_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DataTables/UserDataTableEditor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-293">
+          <caret line="54" column="29" lean-forward="true" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1557">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CheckMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-end-line="6" selection-end-column="36" />
+          <folding>
+            <element signature="e#39#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="66" column="57" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/error404.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="25" selection-end-line="37" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/error405.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/firebasechat/groupchat/manage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="97" column="57" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -926,55 +818,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/yajra/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/StatusMiddleware.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="68" column="63" lean-forward="true" selection-end-line="157" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/firebasechat/groupchat/grouphome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="84" selection-start-line="84" selection-end-line="84" selection-end-column="14" />
+        <state relative-caret-position="324">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
           <folding>
-            <element signature="e#1232#1274#0#HTML" expanded="true" />
-            <element signature="e#2817#2847#0#HTML" expanded="true" />
+            <element signature="e#39#51#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Firebase/ManageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        <state>
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding>
             <element signature="e#49#85#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/DataTables/UserDataTableEditor.php">
+    <entry file="file://$PROJECT_DIR$/public/firebase-messaging-sw.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        <state relative-caret-position="324">
+          <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
           <folding>
-            <element signature="e#34#50#0#PHP" expanded="true" />
-            <element signature="e#1238#2720#0#PHP" />
-            <element signature="e#1199#2361#0#PHP" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/firebasechat/groupchat/manage.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="81" selection-start-line="6" selection-start-column="81" selection-end-line="6" selection-end-column="81" />
+        <state relative-caret-position="509">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Helpers/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="21" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#6#42#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/firebasechat/groupchat/groupjs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="89" column="70" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="72" />
+          <folding>
+            <element signature="e#7#44#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/firebasechat/groupchat/grouphome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="147" column="102" selection-start-line="147" selection-start-column="102" selection-end-line="147" selection-end-column="102" />
+          <folding>
+            <element signature="e#8042#8590#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Firebase/GroupchatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+          <folding>
+            <element signature="e#49#85#0#PHP" expanded="true" />
+            <element signature="e#1739#2130#0#PHP" />
           </folding>
         </state>
       </provider>

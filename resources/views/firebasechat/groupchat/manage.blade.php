@@ -5,7 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-
+    <link href="{{ asset('assets/plugins/global/plugins.bundle.css?v=7.0.5') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css?v=7.0.5') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('assets/editor/css/editor.bootstrap4.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css"/>
@@ -25,6 +25,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Image</th>
+            <th>Status</th>
         </tr>
         </thead>
         <tbody>
@@ -68,6 +69,14 @@
                     clearText:'clear',
                     noImageText:'No Image'
                 },
+                {   label: "Status :",
+                    name: "status",
+                    type: 'select2',
+                    options:[
+                        { label: "Active", value: 1 },
+                        { label: "Inactive", value: 0 },
+                    ]
+                },
 
             ],
 
@@ -86,7 +95,7 @@
             dom: 'Bfltip',
             ajax: "{{ url('/manage/fetch') }}",
             columns: [
-                {data: 'id', name: 'id'},
+                {data:'DT_RowIndex', name:'DT_RowIndex'},
 
                 {data: 'name', name: 'name'},
                 {data: 'email', name: 'email'},
@@ -100,6 +109,7 @@
                     defaultContent: "No image",
                     title: "Image"
                 },
+                {data:'status', name:'status'}
 
 
             ],

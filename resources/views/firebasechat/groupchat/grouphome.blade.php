@@ -49,6 +49,7 @@
                         <div style="max-height: 380px;overflow-y:auto;" class="form-group chat-box" id="recsms" >
 
                         </div>
+
                     </div>
                     <div class="card-footer">
                         <div class="container mt-1">
@@ -71,7 +72,7 @@
                             </div>
 
                             <div class="d-flex justify-content-center">
-                                <span class="text-muted">Design & Developed by <a href="https://twitter.com/ch_abid492" style="text-decoration: none;" >Ch Abid</a></span>
+                                <span class="text-muted text-sm-center">Designed & Developed by <a href="https://twitter.com/ch_abid492" style="text-decoration: none;" >Ch Abid</a></span>
                             </div>
 
                         </div>
@@ -130,18 +131,21 @@
             });
 
         messaging.onMessage((payload) => {
-            //console.log('Message received. ', payload);
+            //console.log('Message received. ', payload.data.title);
+            //getUser(payload.data.title);
+
             appendMessage(payload);
         });
 
         function appendMessage(payload) {
             //$('#recsms').append('<div class="alert alert-info text-break" role="alert" id="messages">'+payload.data.body+'</div>');
 
+            var audio = new Audio('{{ asset('sound/facebook_chat.mp3') }}');
+            audio.play();
             if(payload.data.title==id){
                 $('.chat-box').append(
                     '<div class="d-flex mt-2 mb-2" data-message-id="">'+
-                    '<div class="us-chat-text alert alert-info text-break ml-auto">'+
-                    '<h6>'+payload.data.body+'</h6>'+
+                    '<div class="us-chat-text alert alert-info text-break ml-auto">'+payload.data.body+
                     '<p class="text-right"><small class="text-muted text-right">{{ date('h:i a',strtotime(Carbon\Carbon::now())) }}</small></p>'+
                     '</div>'+
                     '</div>'
@@ -150,7 +154,7 @@
                 $('.chat-box').append(
                     '<div class="d-flex mt-2 mb-2" data-message-id="">'+
                     '<div class="us-chat-text alert alert-success text-break">'+
-                    '<h6>'+payload.data.body+'</h6>'+
+                    '<p>'+payload.data.body+'</p>'+
                     '<p class="text-right"><small class="text-muted text-right">{{ date('h:i a',strtotime(Carbon\Carbon::now())) }}</small></p>'+
                     '</div>'+
                     '</div>'
@@ -178,6 +182,26 @@
                 }
             });
         }
+
+        //get user name
+        /*function getUser(userid) {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url:'/group/getuser',
+                type: "POST",
+                data:{id:userid},
+                dataType: 'json',
+                success: function (response) {
+                    $('.username').text(response.data);
+                    //console.log(response);
+                }
+            });
+        }*/
 
         //chat message div scrollable
         function updateScroll(){
